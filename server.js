@@ -17,6 +17,10 @@ const server = http.createServer();
 
 server.listen(8080);
 
-server.on('request',(req,res)=> { # writtable stream
+server.on('request',(req,res)=> { //writtable stream
     res.write('Hello! \n');
+    setTimeout(() => {
+        res.write('hey');
+        res.end();
+    },3000);
 });
